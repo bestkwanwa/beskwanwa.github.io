@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avater.jpeg">
+  <link rel="icon" type="image/png" href="/img/avatar.jpeg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -19,7 +19,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Hello World - bestkwanwa</title>
+  <title>前端模块化 - bestkwanwa</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -154,8 +154,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-06-17 11:34">
-      2020年6月17日 中午
+    <time datetime="2020-06-22 10:29">
+      2020年6月22日 上午
     </time>
   </div>
 
@@ -165,7 +165,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      73 字
+      1.1k 字
     </span>
   
 
@@ -175,7 +175,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      15
        分钟
     </span>
   
@@ -205,20 +205,155 @@
         <div class="py-5" id="board">
           <div class="post-content mx-auto" id="post">
             
+              <p class="note note-info">
+                
+                  本文最后更新于：2020年6月22日 中午
+                
+              </p>
+            
             <article class="markdown-body">
-              <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span></code></pre>
+              <p>模块化已经是现代前端开发中不可或缺的一部分了。</p>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="hljs bash">$ hexo server</code></pre>
+<h3 id="什么是模块化"><a href="#什么是模块化" class="headerlink" title="什么是模块化"></a>什么是模块化</h3><ul>
+<li>将一个复杂的程序依据一定的规范封装成几个文件，并进行组合在一起</li>
+<li>模块的内部数据与实现是私有的，只是向外暴露了一些借口与外部其他模块通信</li>
+</ul>
+<h3 id="为什么要模块化"><a href="#为什么要模块化" class="headerlink" title="为什么要模块化"></a>为什么要模块化</h3><p>把复杂的问题分解成相对独立的模块，这样的设计可以降低程序的复杂性，提高代码的重用，也有利于团队协作与后期的维护和扩展。</p>
+<h4 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h4><ul>
+<li>减少命名空间污染</li>
+<li>更好的分离，按需加载</li>
+<li>更高的复用性</li>
+<li>更高的可维护性</li>
+</ul>
+<h3 id="如何实现模块化"><a href="#如何实现模块化" class="headerlink" title="如何实现模块化"></a>如何实现模块化</h3><h4 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h4><p>在早期前端对于模块化并没有什么规范，反而是偏向服务端的应用有更强烈的需求，CommonJS规范就是一套偏向于服务端的模块化规范。NodeJS就采用了这个规范。</p>
+<h5 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h5><p>通过module.exports或exports对象导出模块内部数据</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// a.js</span>
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> b = <span class="hljs-number">2</span>;
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="hljs bash">$ hexo generate</code></pre>
+<span class="hljs-built_in">module</span>.exports = &#123;
+  x: a,
+  y: b
+&#125;
+<span class="hljs-comment">// or</span>
+exports.x = a;
+exports.y = b;</code></pre>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="hljs bash">$ hexo deploy</code></pre>
+<h5 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h5><p>通过require函数导入外部模块数据</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// b.js</span>
+<span class="hljs-keyword">let</span> a = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./a'</span>);
+a.x;
+a.y;</code></pre>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h4 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h4><p>因为CommonJS规范的一些特性（基于文件系统、同步加载），它并不适用与浏览器端，所以另外定义了适用于浏览器端的规范<code>AMD(Asynchronous Module Definition)</code>——异步模块定义。它只有定义没有具体的实现，需要引入第三方库来解决。</p>
+<h5 id="requireJS"><a href="#requireJS" class="headerlink" title="requireJS"></a>requireJS</h5><pre><code class="hljs javascript">&lt;script src=<span class="hljs-string">"https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.js"</span>&gt;&lt;<span class="hljs-regexp">/script&gt;</span></code></pre>
+
+<h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>通过define方法定义一个模块，并通过第二个回调函数参数来产生独立作用域</p>
+<pre><code class="hljs javascript">define([Module,]<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-comment">// 模块内部代码</span>
+&#125;)</code></pre>
+
+<h6 id="导出-1"><a href="#导出-1" class="headerlink" title="导出"></a>导出</h6><p>通过return导出模块内部数据</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// Example.js</span>
+define(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">return</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span> </span>&#123;
+    add(person) &#123;
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`添加：<span class="hljs-subst">$&#123;person&#125;</span>`</span>)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<h6 id="导入-1"><a href="#导入-1" class="headerlink" title="导入"></a>导入</h6><p>通过前置依赖列表导入外部模块数据</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// main.js</span>
+<span class="hljs-comment">// 定义一个模块，并导入 ./Example 模块</span>
+define([<span class="hljs-string">'./Example'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">Example</span>) </span>&#123;
+  <span class="hljs-keyword">let</span> example = <span class="hljs-keyword">new</span> Example()
+  example.add(&#123;<span class="hljs-attr">name</span>: <span class="hljs-string">'zhangsan'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">30</span>&#125;)
+&#125;)</code></pre>
+
+<h4 id="UMD"><a href="#UMD" class="headerlink" title="UMD"></a>UMD</h4><p>严格来说，<code>UMD(Universal Module Definition)</code> 并不属于一套模块规范，它主要用来处理 <code>CommonJS</code>、<code>AMD</code>、<code>CMD</code> 的差异兼容，是模块代码能在前面不同的模块环境下都能正常运行。</p>
+<pre><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, factory</span>) </span>&#123;
+  	<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">"object"</span> &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>.exports === <span class="hljs-string">"object"</span>) &#123;
+        <span class="hljs-comment">// Node, CommonJS-like</span>
+        <span class="hljs-built_in">module</span>.exports = factory(<span class="hljs-built_in">require</span>(<span class="hljs-string">'jquery'</span>));
+    &#125;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> define === <span class="hljs-string">"function"</span> &amp;&amp; define.amd) &#123;
+      	<span class="hljs-comment">// AMD 模块环境下</span>
+        define([<span class="hljs-string">'jquery'</span>], factory);
+    &#125;
+&#125;(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">$</span>) </span>&#123; <span class="hljs-comment">// $ 要导入的外部依赖模块</span>
+    $(<span class="hljs-string">'div'</span>)
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span>&#123;&#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">c</span>(<span class="hljs-params"></span>)</span>&#123;&#125;
+
+    <span class="hljs-comment">// 模块导出数据</span>
+    <span class="hljs-keyword">return</span> &#123;
+        b: b,
+        c: c
+    &#125;
+&#125;));
+<span class="hljs-comment">// 在jQuery源码开头就能看到以上代码</span></code></pre>
+
+<h4 id="ESM"><a href="#ESM" class="headerlink" title="ESM"></a>ESM</h4><p>从ECMAScript6 开始，JavaScript 原生引入了模块概念，而且现在主流浏览器也都有了很好的支持。ESM，即<code>ECMAScript Module</code>。</p>
+<h5 id="导出-2"><a href="#导出-2" class="headerlink" title="导出"></a>导出</h5><p>使用export导出模块内部数据</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// 导出单个特性</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> name1, name2, …, nameN;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> name1 = …, name2 = …, …, nameN;
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FunctionName</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span> </span>&#123;...&#125;
+
+<span class="hljs-comment">// 导出列表</span>
+<span class="hljs-keyword">export</span> &#123; name1, name2, …, nameN &#125;;
+
+<span class="hljs-comment">// 重命名导出</span>
+<span class="hljs-keyword">export</span> &#123; variable1 <span class="hljs-keyword">as</span> name1, variable2 <span class="hljs-keyword">as</span> name2, …, nameN &#125;;
+
+<span class="hljs-comment">// 默认导出</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> expression;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">…</span>) </span>&#123; … &#125;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">name1</span>(<span class="hljs-params">…</span>) </span>&#123; … &#125;
+<span class="hljs-keyword">export</span> &#123; name1 <span class="hljs-keyword">as</span> <span class="hljs-keyword">default</span>, … &#125;;
+
+<span class="hljs-comment">// 模块重定向导出</span>
+<span class="hljs-keyword">export</span> * <span class="hljs-keyword">from</span> …;
+<span class="hljs-keyword">export</span> &#123; name1, name2, …, nameN &#125; <span class="hljs-keyword">from</span> …;
+<span class="hljs-keyword">export</span> &#123; import1 <span class="hljs-keyword">as</span> name1, import2 <span class="hljs-keyword">as</span> name2, …, nameN &#125; <span class="hljs-keyword">from</span> …;
+<span class="hljs-keyword">export</span> &#123; <span class="hljs-keyword">default</span> &#125; <span class="hljs-keyword">from</span> …;</code></pre>
+
+<h5 id="导入-2"><a href="#导入-2" class="headerlink" title="导入"></a>导入</h5><h6 id="静态导入"><a href="#静态导入" class="headerlink" title="静态导入"></a>静态导入</h6><p>在浏览器中，import语句只能在声明了<code>type=&#39;module&#39;</code>的script标签中使用</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">import</span> defaultExport <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> name <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name"</span>;
+<span class="hljs-keyword">import</span> &#123; <span class="hljs-keyword">export</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name"</span>;
+<span class="hljs-keyword">import</span> &#123; <span class="hljs-keyword">export</span> <span class="hljs-keyword">as</span> alias &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name"</span>;
+<span class="hljs-keyword">import</span> &#123; export1 , export2 &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name"</span>;
+<span class="hljs-keyword">import</span> &#123; foo , bar &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name/path/to/specific/un-exported/file"</span>;
+<span class="hljs-keyword">import</span> &#123; export1 , export2 <span class="hljs-keyword">as</span> alias2 , [...] &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name"</span>;
+<span class="hljs-keyword">import</span> defaultExport, &#123; <span class="hljs-keyword">export</span> [ , [...] ] &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name"</span>;
+<span class="hljs-keyword">import</span> defaultExport, * <span class="hljs-keyword">as</span> name <span class="hljs-keyword">from</span> <span class="hljs-string">"module-name"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"module-name"</span>;</code></pre>
+
+<p><strong>静态导入的方式不支持延迟加载，import必须在模块的最开始</strong></p>
+<pre><code class="hljs javascript"><span class="hljs-built_in">document</span>.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+
+    <span class="hljs-comment">// import 必须放置在当前模块最开始加载</span>
+    <span class="hljs-comment">// import m1 from './m1.js'</span>
+
+    <span class="hljs-comment">// console.log(m1);</span>
+
+&#125;</code></pre>
+
+<h5 id="动态导入"><a href="#动态导入" class="headerlink" title="动态导入"></a>动态导入</h5><p>此外，还有一个类似函数的动态 <code>import()</code>，它不需要依赖 <code>type=&quot;module&quot;</code> 的 script 标签。</p>
+<p>关键字 <code>import</code> 可以像调用函数一样来动态的导入模块。以这种方式调用，将返回一个 <code>promise</code>。</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">import</span>(<span class="hljs-string">'./m.js'</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">m</span> =&gt;</span> &#123;
+    <span class="hljs-comment">//...</span>
+&#125;);
+<span class="hljs-comment">// 也支持 await</span>
+<span class="hljs-keyword">let</span> m = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./m.js'</span>);</code></pre>
+
+<p><strong>通过 <code>import()</code> 方法导入返回的数据会被包装在一个对象中，即使是 <code>default</code> 也是如此</strong></p>
 
             </article>
             <hr>
@@ -234,12 +369,6 @@
                 <div class="post-prevnext row">
                   <div class="post-prev col-6">
                     
-                    
-                      <a href="/2020/06/17/about-me/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">about-me</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
                     
                   </div>
                   <div class="post-next col-6">
@@ -300,6 +429,12 @@
 </div>
 
 <!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
 
 
     
@@ -522,7 +657,7 @@
       if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/06/17/hello-world/');
+          var target = decodeURI('/2020/06/22/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -616,7 +751,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Hello World&nbsp;",
+        "前端模块化&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
