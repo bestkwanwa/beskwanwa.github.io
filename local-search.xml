@@ -8,7 +8,7 @@
     <link href="/2020/06/23/%E6%9D%82/"/>
     <url>/2020/06/23/%E6%9D%82/</url>
     
-    <content type="html"><![CDATA[<p>学习到的一些小知识。</p><a id="more"></a><h3 id="GitHub显示不了图片"><a href="#GitHub显示不了图片" class="headerlink" title="GitHub显示不了图片"></a>GitHub显示不了图片</h3><p>打开浏览器开发者工具，发现各种连接错误被拒绝，八九不离十就是<strong>网址解析错误</strong>，那就需要人为给它重定向转换到对应的IP地址。打开该网址<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.ipaddress.com%2F" target="_blank" rel="noopener">ipaddress.com/</a>把每个错误的url放入里面获取对应IP，并把它收集起来。</p><p>参考：<a href="https://www.jianshu.com/p/c42a28d97d50" target="_blank" rel="noopener">Github显示不了图片的解决方法</a></p><h3 id="git全局-gitignore文件"><a href="#git全局-gitignore文件" class="headerlink" title="git全局.gitignore文件"></a>git全局.gitignore文件</h3><p>.DS_Store(英文全称 Desktop Services Store)是一种由苹果公司的Mac OS X操作系统所创造的隐藏文件，目的在于存贮目录的自定义属性，例如文件的图标位置或者是背景色的选择。相当于 Windows 下的 desktop.ini。需要添加<code>.gitignore</code>文件，不然<code>git</code>会把<code>.DS_Store</code>当成需要管理版本的文件，在<code>git add</code>时添加到仓库中。</p><p>参考：<a href="https://www.jianshu.com/p/2b247923cb4b" target="_blank" rel="noopener">Git全局.gitignore文件</a></p><h3 id="jsDeliver加速GitHub-Pages图片的加载"><a href="#jsDeliver加速GitHub-Pages图片的加载" class="headerlink" title="jsDeliver加速GitHub Pages图片的加载"></a>jsDeliver加速GitHub Pages图片的加载</h3><p>插入来自 Github 仓库的图片，由于网络情况可能会出现加载慢和无法加载的情况，我们可以使用 jsDelivr来加速图片文件等媒体文件的加载。</p><p>发布仓库后，通过jsDeliver引用文件。</p><blockquote><p>使用方法：<br><a href="https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</a></p></blockquote><p>参考：<a href="https://www.cnblogs.com/zhsh666/p/11432956.html" target="_blank" rel="noopener">jsDeliver+github使用教程，免费的cdn</a></p>]]></content>
+    <content type="html"><![CDATA[<p>学习到的一些小知识。</p><a id="more"></a><h3 id="GitHub显示不了图片"><a href="#GitHub显示不了图片" class="headerlink" title="GitHub显示不了图片"></a>GitHub显示不了图片</h3><p>打开浏览器开发者工具，发现各种连接错误被拒绝，八九不离十就是<strong>网址解析错误</strong>，那就需要人为给它重定向转换到对应的IP地址。打开该网址<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.ipaddress.com%2F" target="_blank" rel="noopener">ipaddress.com/</a>把每个错误的url放入里面获取对应IP，并把它收集起来。</p><p>参考：<a href="https://www.jianshu.com/p/c42a28d97d50" target="_blank" rel="noopener">Github显示不了图片的解决方法</a></p><h3 id="git全局-gitignore文件"><a href="#git全局-gitignore文件" class="headerlink" title="git全局.gitignore文件"></a>git全局.gitignore文件</h3><p>.DS_Store(英文全称 Desktop Services Store)是一种由苹果公司的Mac OS X操作系统所创造的隐藏文件，目的在于存贮目录的自定义属性，例如文件的图标位置或者是背景色的选择。相当于 Windows 下的 desktop.ini。需要添加<code>.gitignore</code>文件，不然<code>git</code>会把<code>.DS_Store</code>当成需要管理版本的文件，在<code>git add</code>时添加到仓库中。</p><p>参考：<a href="https://www.jianshu.com/p/2b247923cb4b" target="_blank" rel="noopener">Git全局.gitignore文件</a></p><h3 id="jsDelivr加速GitHub-Pages图片的加载"><a href="#jsDelivr加速GitHub-Pages图片的加载" class="headerlink" title="jsDelivr加速GitHub Pages图片的加载"></a>jsDelivr加速GitHub Pages图片的加载</h3><p>插入来自 Github 仓库的图片，由于网络情况可能会出现加载慢和无法加载的情况，我们可以使用 jsDelivr来加速图片文件等媒体文件的加载。</p><p>发布仓库后，通过jsDelivr引用文件。</p><blockquote><p>使用方法：<br><a href="https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</a></p></blockquote><p>参考：<a href="https://www.cnblogs.com/zhsh666/p/11432956.html" target="_blank" rel="noopener">jsDeliver+github使用教程，免费的cdn</a></p>]]></content>
     
     
     <categories>
@@ -20,11 +20,11 @@
     
     <tags>
       
-      <tag>GitHub</tag>
-      
       <tag>git</tag>
       
-      <tag>jsDeliver</tag>
+      <tag>GitHub</tag>
+      
+      <tag>jsDelivr</tag>
       
     </tags>
     
